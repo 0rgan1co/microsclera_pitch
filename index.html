@@ -3,17 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MICROSCLERA — Bioinsecticidas que duran</title>
-<meta name="description" content="MICROSCLERA desarrolla la nueva generación de bioinsecticidas basada en microesclerocios: un biorreactor natural con 3-5× más persistencia en campo y menos aplicaciones.">
+<title>Pitch Feedback — MICROSCLERA · Para Carla + Nico</title>
+<meta name="description" content="Documento de feedback al pitch v1 de Microsclera (3 sombreros + 3 caminos narrativos) generado actuando como Fede, Mati y Romi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<!--
-  NOTAS PARA EL USUARIO (Nico/Jota):
-  Esta versión integra los fixes del análisis 3-hats + los 3 arquetipos A/B/C (Peire / Marque-hipótesis / Casadevall-hipótesis).
-  Donde no había datos verificables, dejé placeholders [REEMPLAZAR: …].
-  Buscar la cadena "REEMPLAZAR" para ubicar todos los puntos pendientes.
--->
 <style>
   :root {
     --bg: #F4F1EA;
@@ -27,692 +21,287 @@
     --sage: #6B8E4E;
     --soil: #B8975E;
     --soil-dark: #8E6F3E;
-    --accent: #C8E045;
-    --danger: #B05A2C;
+    --hat-yellow: #C49B1F;
+    --hat-yellow-bg: #FBF3DC;
+    --hat-black: #2A2A2A;
+    --hat-black-bg: #E8E5DD;
+    --hat-green: #4F7A3A;
+    --hat-green-bg: #E4EED9;
+    --alt-a: #8E5A2E;
+    --alt-b: #3F6B8E;
+    --alt-c: #6B3B7E;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.55;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    background: var(--bg); color: var(--ink); line-height: 1.55; font-size: 16px;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
-
-  h1, h2, h3, .display {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--ink);
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.1;
+    letter-spacing: -0.02em; color: var(--ink);
   }
-
-  .container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  /* ===== NAV ===== */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
   nav.topbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(244, 241, 234, 0.78);
-    border-bottom: 1px solid var(--line);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background: rgba(244, 241, 234, 0.85); border-bottom: 1px solid var(--line);
   }
   nav.topbar .inner {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1080px; margin: 0 auto; padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
   }
   .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    font-size: 13px;
-    color: var(--forest);
+    display: flex; align-items: center; gap: 10px; font-weight: 700;
+    letter-spacing: 0.16em; font-size: 12px; color: var(--forest);
   }
   .brand-mark {
-    width: 22px; height: 22px;
-    border-radius: 50%;
+    width: 20px; height: 20px; border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, var(--sage), var(--forest) 70%);
     box-shadow: inset 0 0 0 2px rgba(255,255,255,0.25);
   }
-  .nav-meta {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+  .nav-toc {
+    display: flex; gap: 14px; font-size: 11px; color: var(--muted);
+    letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+    flex-wrap: wrap;
   }
+  .nav-toc a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-toc a:hover { color: var(--forest); }
+  @media (max-width: 900px) { .nav-toc { display: none; } }
 
-  /* ===== SECTION CHROME ===== */
-  section { padding: 120px 0; position: relative; }
-  section + section { border-top: 1px solid var(--line); }
-
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--forest);
-    font-weight: 600;
-    margin-bottom: 28px;
-  }
-  .eyebrow::before {
-    content: "";
-    width: 32px; height: 1px;
-    background: var(--forest);
-    display: inline-block;
-  }
-
-  /* ===== HERO ===== */
+  /* HERO */
   .hero {
-    padding-top: 180px;
-    padding-bottom: 140px;
-    background:
-      radial-gradient(ellipse at 80% 10%, rgba(107, 142, 78, 0.14), transparent 50%),
-      radial-gradient(ellipse at 10% 80%, rgba(184, 151, 94, 0.12), transparent 60%),
-      var(--bg);
-    position: relative;
-    overflow: hidden;
+    padding-top: 130px; padding-bottom: 70px;
+    background: radial-gradient(ellipse at 80% 10%, rgba(107, 142, 78, 0.10), transparent 50%), var(--bg);
+    border-bottom: 1px solid var(--line);
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(43, 74, 42, 0.07) 1px, transparent 0);
-    background-size: 24px 24px;
-    pointer-events: none;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  .hero .feedback-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 6px 14px; background: var(--paper); border: 1px solid var(--line);
+    border-radius: 100px; font-size: 11px; color: var(--forest);
+    letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; margin-bottom: 32px;
   }
-  .hero .container { position: relative; z-index: 2; }
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 32px;
+  .hero .feedback-tag .pulse {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--forest);
+    animation: pulse 2s infinite;
   }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 100px;
-    font-size: 12px;
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(43, 74, 42, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(43, 74, 42, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(43, 74, 42, 0); }
   }
-  .badge .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--sage);
-  }
-  .badge.stage .dot { background: var(--soil); }
   .hero h1 {
-    font-size: clamp(48px, 7vw, 88px);
-    margin-bottom: 24px;
-    max-width: 14ch;
+    font-size: clamp(34px, 5vw, 60px); margin-bottom: 22px; max-width: 22ch;
   }
-  .hero h1 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--forest);
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--forest); }
+  .hero .for-line {
+    font-family: 'Fraunces', serif; font-size: 19px; color: var(--ink-soft); margin-bottom: 30px;
   }
-  .hero .claim {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(20px, 1.8vw, 26px);
-    color: var(--ink-soft);
-    max-width: 32ch;
-    margin-bottom: 28px;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-  .hero .claim strong { color: var(--forest); font-weight: 500; }
+  .hero .for-line strong { color: var(--ink); font-weight: 500; }
   .hero .lead {
-    font-size: clamp(16px, 1.4vw, 18px);
-    color: var(--muted);
-    max-width: 58ch;
-    margin-bottom: 56px;
+    font-size: 16px; color: var(--muted); max-width: 70ch; line-height: 1.6;
   }
-  .signature {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .signature .avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--soil), var(--forest));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--paper);
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-  }
-  .signature strong { color: var(--ink); font-weight: 600; }
-
-  /* ===== SECTION TITLES ===== */
-  h2.section-title {
-    font-size: clamp(34px, 4.5vw, 52px);
-    max-width: 22ch;
-    margin-bottom: 28px;
-  }
-  h2.section-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--forest);
-  }
-  .section-body {
-    font-size: 18px;
-    color: var(--ink-soft);
-    max-width: 65ch;
-  }
-  .section-body p + p { margin-top: 20px; }
-  .section-body strong { color: var(--ink); font-weight: 600; }
-
-  /* ===== STATS ===== */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    margin-top: 64px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .stat {
-    background: var(--paper);
-    padding: 36px 28px;
-    display: flex;
-    flex-direction: column;
-  }
-  .stat .num {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(38px, 4.2vw, 56px);
-    font-weight: 500;
-    line-height: 1;
-    color: var(--forest);
-    letter-spacing: -0.02em;
-  }
-  .stat .num small {
-    font-size: 0.5em;
-    color: var(--soil-dark);
-    margin-left: 4px;
-    font-weight: 500;
-  }
-  .stat .label {
-    margin-top: 14px;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.45;
-    max-width: 22ch;
-    flex: 1;
-  }
-  .stat .source {
-    margin-top: 16px;
-    font-size: 11px;
-    color: var(--soil-dark);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .hero .lead p + p { margin-top: 12px; }
+  .hero .meta-line {
+    margin-top: 28px;
+    padding-top: 20px;
     border-top: 1px solid var(--line);
-    padding-top: 10px;
-  }
-
-  /* ===== COMPARISON TABLE (limitation block) ===== */
-  .comparison {
-    margin-top: 56px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    overflow: hidden;
-  }
-  .comparison-row {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    align-items: stretch;
-  }
-  .comparison-row + .comparison-row { border-top: 1px solid var(--line); }
-  .comparison-row > div {
-    padding: 22px 24px;
-    border-right: 1px solid var(--line);
-  }
-  .comparison-row > div:last-child { border-right: none; }
-  .comparison-row.head > div {
-    background: var(--bg);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    font-weight: 600;
-  }
-  .comparison-row .label {
-    font-weight: 500;
-    color: var(--ink);
-    font-size: 15px;
-  }
-  .comparison-row .value {
-    font-family: 'Fraunces', serif;
-    font-size: 24px;
-    color: var(--ink-soft);
-    line-height: 1.1;
-  }
-  .comparison-row .value.win {
-    color: var(--forest);
-    font-weight: 500;
-  }
-  .comparison-row .value small {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-    font-weight: 400;
-  }
-  .comparison-note {
-    margin-top: 16px;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-
-  /* ===== WHY NOW ===== */
-  .why-now {
-    background: var(--paper);
-  }
-  .why-now-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 56px;
-  }
-  .why-now-card {
-    padding: 32px 0;
-    border-top: 2px solid var(--forest);
-  }
-  .why-now-card .yr {
-    font-family: 'Fraunces', serif;
-    font-size: 14px;
-    color: var(--soil-dark);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    margin-bottom: 14px;
-  }
-  .why-now-card h3 {
-    font-size: 22px;
-    margin-bottom: 14px;
-    font-weight: 500;
-  }
-  .why-now-card p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  /* ===== SOLUTION ===== */
-  .solution {
-    background:
-      radial-gradient(ellipse at 90% 0%, rgba(107, 142, 78, 0.08), transparent 55%),
-      var(--bg);
-  }
-  .solution h2.section-title em { color: var(--sage); }
-
-  .pillars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 56px;
-  }
-  .pillar {
-    padding: 32px 28px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-  }
-  .pillar .icon {
-    width: 44px; height: 44px;
-    margin-bottom: 24px;
-    color: var(--forest);
-  }
-  .pillar .icon svg { width: 100%; height: 100%; }
-  .pillar .metric {
-    font-family: 'Fraunces', serif;
-    font-size: 32px;
-    color: var(--forest);
-    line-height: 1;
-    margin-bottom: 12px;
-    font-weight: 500;
-  }
-  .pillar .metric small {
-    font-size: 0.45em;
-    color: var(--soil-dark);
-    margin-left: 4px;
-  }
-  .pillar h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-  .pillar p {
-    font-size: 14.5px;
-    color: var(--muted);
-    line-height: 1.55;
-    flex: 1;
-  }
-
-  .endophyte-note {
-    margin-top: 32px;
-    padding: 22px 28px;
-    background: var(--paper);
-    border-left: 3px solid var(--sage);
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-  }
-  .endophyte-note strong { color: var(--forest); font-weight: 600; }
-  .endophyte-note .tag {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  /* ===== TECHNICAL / EDGE ===== */
-  .edge {
-    background: var(--forest-dark);
-    color: var(--paper);
-  }
-  .edge .eyebrow { color: var(--accent); }
-  .edge .eyebrow::before { background: var(--accent); }
-  .edge h2.section-title { color: var(--paper); }
-  .edge h2.section-title em { color: var(--accent); font-style: italic; }
-  .edge .section-body { color: rgba(250, 248, 242, 0.78); }
-  .edge .section-body strong { color: var(--paper); }
-
-  .achievements {
-    margin-top: 56px;
-    display: grid;
-    gap: 0;
-    border-top: 1px solid rgba(250, 248, 242, 0.15);
-  }
-  .achievement {
-    padding: 32px 0;
-    display: grid;
-    grid-template-columns: 60px 1fr 220px;
-    gap: 32px;
-    border-bottom: 1px solid rgba(250, 248, 242, 0.15);
-    align-items: baseline;
-  }
-  .achievement .idx {
-    font-family: 'Fraunces', serif;
-    font-size: 28px;
-    color: var(--accent);
-    font-weight: 400;
-  }
-  .achievement .desc {
-    font-size: 17px;
-    color: rgba(250, 248, 242, 0.92);
-    line-height: 1.5;
-    max-width: 50ch;
-  }
-  .achievement .proof {
-    font-size: 12px;
-    color: rgba(200, 224, 69, 0.85);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    line-height: 1.4;
-    align-self: center;
-    border-left: 1px solid rgba(250, 248, 242, 0.2);
-    padding-left: 18px;
-  }
-  .achievement .proof .placeholder {
-    color: rgba(250, 248, 242, 0.45);
-    font-style: italic;
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 11px;
-  }
-
-  /* ===== TEAM ===== */
-  .team h2.section-title em { color: var(--soil-dark); }
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 56px;
-  }
-  .person-card {
-    padding: 28px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-  }
-  .person-card .photo {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--sage), var(--forest));
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--paper);
-    font-weight: 600;
-    font-family: 'Fraunces', serif;
-    font-size: 22px;
-  }
-  .person-card .info { flex: 1; }
-  .person-card h3 {
-    font-size: 18px;
-    margin-bottom: 4px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-  .person-card .role {
     font-size: 13px;
-    color: var(--soil-dark);
-    margin-bottom: 12px;
+    color: var(--muted);
     letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: 600;
   }
-  .person-card .cred {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .person-card.placeholder {
-    background: repeating-linear-gradient(
-      45deg,
-      var(--paper),
-      var(--paper) 10px,
-      rgba(184, 151, 94, 0.06) 10px,
-      rgba(184, 151, 94, 0.06) 20px
-    );
-  }
-  .person-card.placeholder .photo {
-    background: var(--line);
-    color: var(--muted);
-  }
-  .person-card.placeholder h3 { color: var(--muted); font-style: italic; }
+  .hero .meta-line strong { color: var(--forest); font-weight: 600; }
 
-  .institutions {
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 1px solid var(--line);
+  .legend {
+    margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 760px;
   }
-  .institutions .tag {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 18px;
+  .legend-item {
+    padding: 12px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+    display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px;
   }
-  .institutions .logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .inst-logo {
-    padding: 10px 18px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    font-size: 13px;
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
-    font-weight: 500;
-  }
-  .inst-logo.placeholder {
-    color: var(--muted);
-    font-style: italic;
-    border-style: dashed;
-  }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .legend-dot.yellow { background: var(--hat-yellow); }
+  .legend-dot.black { background: var(--hat-black); }
+  .legend-dot.green { background: var(--hat-green); }
+  .legend-dot.alt-a { background: var(--alt-a); }
+  .legend-dot.alt-b { background: var(--alt-b); }
+  .legend-dot.alt-c { background: var(--alt-c); }
+  .legend-item strong { color: var(--ink); display: block; margin-bottom: 2px; font-weight: 600; }
+  .legend-item span { color: var(--muted); line-height: 1.4; }
+  @media (max-width: 720px) { .legend { grid-template-columns: 1fr; } }
 
-  /* ===== CLOSING ===== */
-  .closing {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 160px 0;
+  /* BLOCK */
+  .block { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  .block.is-optional { background: rgba(184, 151, 94, 0.04); }
+  .block-header {
+    display: grid; grid-template-columns: 80px 1fr; gap: 28px;
+    align-items: baseline; margin-bottom: 28px;
   }
-  .closing .container { max-width: 880px; }
-  .closing .eyebrow { color: var(--accent); }
-  .closing .eyebrow::before { background: var(--accent); }
-  .closing h2 {
-    font-size: clamp(38px, 5.5vw, 64px);
-    line-height: 1.1;
-    color: var(--paper);
-    max-width: 22ch;
-    margin-bottom: 40px;
-    font-weight: 500;
+  .block-number {
+    font-family: 'Fraunces', serif; font-size: 44px; color: var(--soil);
+    line-height: 1; font-weight: 500;
   }
-  .closing h2 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
+  .block-title-wrap .eyebrow {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--forest); font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
-  .closing .impact-metric {
-    margin-top: 56px;
-    padding: 32px 0;
-    border-top: 1px solid rgba(250, 248, 242, 0.18);
-    border-bottom: 1px solid rgba(250, 248, 242, 0.18);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: center;
+  .opt-badge {
+    background: var(--soil); color: var(--paper); padding: 2px 8px;
+    border-radius: 3px; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
   }
-  .closing .impact-metric .big {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(40px, 5vw, 56px);
-    color: var(--accent);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.02em;
+  .block-title-wrap h2 {
+    font-size: clamp(26px, 3.4vw, 36px); max-width: 26ch;
   }
-  .closing .impact-metric .desc {
-    font-size: 15px;
-    color: rgba(250, 248, 242, 0.75);
-    line-height: 1.5;
+  .block-title-wrap h2 em { font-style: italic; color: var(--forest); font-weight: 400; }
+
+  .original {
+    margin: 0 0 32px 108px; padding: 22px 26px; background: var(--paper);
+    border-left: 3px solid var(--soil); border-radius: 0 4px 4px 0;
   }
-  .closing .impact-metric .desc .placeholder {
-    color: rgba(250, 248, 242, 0.4);
-    font-style: italic;
+  .original.empty { border-left-color: var(--muted); background: rgba(107, 111, 97, 0.05); }
+  .original .label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--soil-dark); font-weight: 700; margin-bottom: 12px;
   }
-  .closing .sign-off {
-    margin-top: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    font-size: 13px;
-    color: rgba(250, 248, 242, 0.6);
-    letter-spacing: 0.05em;
+  .original.empty .label { color: var(--muted); }
+  .original p {
+    font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink-soft);
+    line-height: 1.55; font-style: italic; max-width: 75ch;
   }
-  .closing .sign-off .brand { color: var(--paper); }
-  .closing .sign-off .contact {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+  .original p + p { margin-top: 10px; }
+  @media (max-width: 760px) { .original { margin-left: 0; } }
+
+  .hats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    margin: 0 0 32px 108px;
   }
-  .closing .sign-off .contact a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(200, 224, 69, 0.3);
-    padding-bottom: 2px;
+  @media (max-width: 1000px) { .hats { grid-template-columns: 1fr; margin-left: 0; } }
+  .hat {
+    padding: 22px 22px 18px; border-radius: 6px; border: 1px solid;
+  }
+  .hat-yellow { background: var(--hat-yellow-bg); border-color: rgba(196, 155, 31, 0.3); }
+  .hat-black { background: var(--hat-black-bg); border-color: rgba(42, 42, 42, 0.2); }
+  .hat-green { background: var(--hat-green-bg); border-color: rgba(79, 122, 58, 0.3); }
+  .hat .hat-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+    font-weight: 700; margin-bottom: 16px;
+  }
+  .hat-yellow .hat-label { color: var(--hat-yellow); }
+  .hat-black .hat-label { color: var(--hat-black); }
+  .hat-green .hat-label { color: var(--hat-green); }
+  .hat .hat-label::before {
+    content: ""; width: 11px; height: 11px; border-radius: 50%; display: inline-block;
+  }
+  .hat-yellow .hat-label::before { background: var(--hat-yellow); }
+  .hat-black .hat-label::before { background: var(--hat-black); }
+  .hat-green .hat-label::before { background: var(--hat-green); }
+  .bullet {
+    font-size: 13.5px; color: var(--ink-soft); line-height: 1.55;
+    padding: 8px 0;
+  }
+  .bullet + .bullet { border-top: 1px solid rgba(0,0,0,0.06); }
+  .bullet strong {
+    color: var(--ink); font-weight: 600; display: block; margin-bottom: 3px;
+    font-size: 13.5px; font-family: 'Inter', sans-serif;
   }
 
-  /* ===== FOOTER ===== */
-  footer.legal {
-    padding: 32px 0;
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
+  /* ALTS */
+  .alts {
+    margin: 0 0 0 108px; padding-top: 18px; border-top: 1px dashed var(--line);
+  }
+  @media (max-width: 760px) { .alts { margin-left: 0; } }
+  .alts-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .alts-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--muted); font-weight: 700;
+  }
+  .alts-hint { font-size: 12px; color: var(--muted); font-style: italic; }
+  .alts-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  @media (max-width: 1000px) { .alts-grid { grid-template-columns: 1fr; } }
+  .alt {
+    padding: 20px 22px; background: var(--paper); border: 1px solid var(--line);
+    border-radius: 6px; border-top: 3px solid;
+  }
+  .alt-a { border-top-color: var(--alt-a); }
+  .alt-b { border-top-color: var(--alt-b); }
+  .alt-c { border-top-color: var(--alt-c); }
+  .alt-tag {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+    font-weight: 700; margin-bottom: 10px;
+  }
+  .alt-a .alt-tag { color: var(--alt-a); }
+  .alt-b .alt-tag { color: var(--alt-b); }
+  .alt-c .alt-tag { color: var(--alt-c); }
+  .alt-tag .letter {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500;
+    line-height: 1; letter-spacing: 0;
+  }
+  .alt p {
+    font-size: 13.5px; color: var(--ink-soft); line-height: 1.55;
   }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 780px) {
-    body { font-size: 16px; }
-    section { padding: 80px 0; }
-    .hero { padding-top: 140px; padding-bottom: 100px; }
-    .stats { grid-template-columns: 1fr; }
-    .pillars { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: 1fr; gap: 16px; }
-    .why-now-grid { grid-template-columns: 1fr; gap: 24px; }
-    .achievement { grid-template-columns: 40px 1fr; gap: 18px; }
-    .achievement .proof {
-      grid-column: 2;
-      border-left: none;
-      border-top: 1px solid rgba(250, 248, 242, 0.2);
-      padding-left: 0;
-      padding-top: 12px;
-      margin-top: 8px;
-    }
-    .achievement .idx { font-size: 22px; }
-    .comparison-row { grid-template-columns: 1fr 1fr; }
-    .comparison-row > div { border-right: none; border-bottom: 1px solid var(--line); }
-    .comparison-row.head { display: none; }
-    .closing .impact-metric { grid-template-columns: 1fr; gap: 16px; }
-    .container { padding: 0 24px; }
-    nav.topbar .inner { padding: 14px 24px; }
+  /* SYNTHESIS */
+  .synthesis {
+    background: var(--forest-dark); color: var(--paper); padding: 90px 0;
+  }
+  .synthesis .container { max-width: 920px; }
+  .synthesis .eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(200, 224, 69, 0.9); font-weight: 700; margin-bottom: 22px;
+  }
+  .synthesis h2 {
+    font-size: clamp(30px, 4vw, 46px); line-height: 1.15;
+    color: var(--paper); margin-bottom: 24px; max-width: 24ch; font-weight: 500;
+  }
+  .synthesis h2 em { font-style: italic; color: #C8E045; font-weight: 400; }
+  .synthesis .intro {
+    font-size: 15.5px; color: rgba(250, 248, 242, 0.78); max-width: 62ch;
+    line-height: 1.6; margin-bottom: 40px;
+  }
+  .priorities { display: grid; gap: 0; border-top: 1px solid rgba(250, 248, 242, 0.18); }
+  .priority {
+    padding: 22px 0; display: grid; grid-template-columns: 50px 1fr 110px;
+    gap: 24px; border-bottom: 1px solid rgba(250, 248, 242, 0.18); align-items: baseline;
+  }
+  .priority .rank {
+    font-family: 'Fraunces', serif; font-size: 24px; color: #C8E045; font-weight: 500;
+  }
+  .priority .what { font-size: 15px; color: rgba(250, 248, 242, 0.95); line-height: 1.5; }
+  .priority .what strong { color: var(--paper); font-weight: 600; }
+  .priority .effort {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(200, 224, 69, 0.85); font-weight: 700; text-align: right;
+  }
+  @media (max-width: 720px) {
+    .priority { grid-template-columns: 36px 1fr; gap: 14px; }
+    .priority .effort { grid-column: 2; text-align: left; }
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+  footer.fb {
+    background: var(--ink); color: rgba(250, 248, 242, 0.6);
+    padding: 32px 0; font-size: 12px; text-align: center; letter-spacing: 0.05em;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  footer.fb .brand { justify-content: center; color: var(--paper); margin-bottom: 8px; }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 760px) {
+    .block-header { grid-template-columns: 50px 1fr; gap: 16px; margin-bottom: 22px; }
+    .block-number { font-size: 34px; }
+    .container { padding: 0 22px; }
+    .block { padding: 56px 0; }
+    .hero { padding-top: 110px; padding-bottom: 50px; }
   }
 </style>
 </head>
@@ -720,329 +309,564 @@
 
 <nav class="topbar">
   <div class="inner">
-    <div class="brand"><span class="brand-mark"></span><span>MICROSCLERA</span></div>
-    <div class="nav-meta">Pitch · 2026</div>
+    <div class="brand"><span class="brand-mark"></span><span>MICROSCLERA · PITCH FEEDBACK</span></div>
+    <div class="nav-toc"><a href="#b1">Apertura</a>
+      <a href="#b2">Problema</a>
+      <a href="#b3">Limitación</a>
+      <a href="#b4">Solución</a>
+      <a href="#b5">Ventaja</a>
+      <a href="#b6">Tendencia</a>
+      <a href="#b7">Equipo</a>
+      <a href="#b8">Tracción</a>
+      <a href="#b9">Cierre</a>
+      <a href="#sintesis">Síntesis</a></div>
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
-<!-- Integra: 3-hats Bloque 1 (badge categoría + claim económico) + A-Peire (data subtitle) + B-Marque-hipótesis (mantener gancho narrativo) -->
 <section class="hero">
   <div class="container reveal">
-    <div class="hero-badges">
-      <span class="badge"><span class="dot"></span>Plataforma de control biológico</span>
-      <span class="badge stage"><span class="dot"></span>Etapa: [REEMPLAZAR: Pre-seed / Seed]</span>
-      <span class="badge"><span class="dot"></span>AgTech · Bio</span>
+    <div class="feedback-tag"><span class="pulse"></span>Documento de feedback · pitch v1 · 13-may-2026</div>
+    <h1>Feedback al pitch de Microsclera — <em>3 sombreros + 3 caminos narrativos</em>.</h1>
+    <p class="for-line">Para: <strong>Carla Huarte Bonnet</strong> + <strong>Nico Pedrini</strong></p>
+    <div class="lead">
+      <p>Este documento revisa el pitch de 3 minutos de Microsclera bloque por bloque. Para cada bloque mostramos: el texto actual del pitch, el feedback con la técnica de los tres sombreros (amarillo / negro / verde) y tres caminos narrativos alternativos extraídos del sombrero verde para reescribir esa sección.</p>
+      <p>El feedback fue generado por IA actuando como <strong style="color:var(--ink); font-weight:500;">Fede, Mati y Romi</strong> — tres miradas complementarias del ecosistema. Las ideas en verde son provocaciones para explorar, no recetas: la recomendación es mezclar lo que resuene de cada una.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot yellow"></div><div><strong>Sombrero amarillo</strong><span>Lo que ya funciona — preservar</span></div></div>
+      <div class="legend-item"><div class="legend-dot black"></div><div><strong>Sombrero negro</strong><span>Críticas de un inversor Deep Tech</span></div></div>
+      <div class="legend-item"><div class="legend-dot green"></div><div><strong>Sombrero verde</strong><span>Nuevas ideas / caminos narrativos</span></div></div>
+      <div class="legend-item"><div class="legend-dot alt-a"></div><div><strong>Camino A · B · C</strong><span>Tres reescrituras alternativas por bloque</span></div></div>
+    </div>
+    <div class="meta-line">
+      Fuente: <strong>Microsclera Refinamiento del Pitch · Pitch v1 · 13-05-2026</strong>. Las propuestas en verde están extraídas literalmente del documento de trabajo.
+    </div>
+  </div>
+</section>
+
+
+<section class="block" id="b1">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">01</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 1 · Apertura </div>
+        <h2>Apertura · <em>"Un mundo libre de insecticidas químicos"</em></h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>Hola, soy Nico Pedrini de MICROSCLERA y creemos en un mundo libre de insecticidas químicos.</p><p>En MICROSCLERA estamos desarrollando la nueva generación de bioinsecticidas, basada en un nuevo principio activo: los microesclerocios</p>
     </div>
 
-    <h1>Un mundo libre de <em>insecticidas químicos</em>.</h1>
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Claridad de visión</strong>La declaración inicial establece un propósito ambicioso y ético que alinea el proyecto con las tendencias globales de sostenibilidad y salud ambiental.</div><div class="bullet"><strong>Introducción de innovación científica</strong>Al presentar los microesclerocios como un nuevo principio activo, se posiciona la propuesta dentro del ecosistema Deep Tech, sugiriendo una barrera de entrada basada en conocimiento técnico sólido.</div><div class="bullet"><strong>Identidad de marca temprana</strong>Mencionar el nombre de la startup y el del fundador desde el comienzo facilita la recordación y establece una conexión directa entre el liderazgo y la visión tecnológica.</div><div class="bullet"><strong>Definición de categoría</strong>Clasificar el producto como la nueva generación de bioinsecticidas ayuda a los inversores a ubicar rápidamente la solución en un mercado en crecimiento, diferenciándola de los productos biológicos tradicionales.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Vaguedad científica inicial</strong>Presentar los microesclerocios como un nuevo principio activo sin explicar qué son biológicamente en la primera oración deja al inversor con una duda técnica inmediata que distrae del resto del mensaje.</div><div class="bullet"><strong>Ausencia de validación de tracción</strong>La apertura se siente como una declaración de deseos; falta una cifra o hito concreto que demuestre que no están empezando desde cero, como una patente concedida o resultados de laboratorio específicos.</div><div class="bullet"><strong>Gancho de mercado genérico</strong>El propósito de un mundo libre de insecticidas químicos es un lugar común en el sector agtech; no se diferencia de otras startups biológicas si no se menciona inmediatamente la ventaja disruptiva de los microesclerocios frente a lo que ya existe.</div><div class="bullet"><strong>Falta de urgencia competitiva</strong>No se explica por qué es el momento adecuado para esta tecnología ni por qué MICROSCLERA es el único capaz de ejecutarla, lo que reduce la percepción de oportunidad de inversión única.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
 
-    <p class="claim">
-      La nueva generación de bioinsecticidas: <strong>3-5× más persistencia en campo</strong>, una sola aplicación por temporada. <span style="color: var(--muted); font-style: italic; font-size: 0.85em;">[REEMPLAZAR si el ratio real difiere]</span>
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · El Despertar de las Semillas Dormidas</span></div>
+          <p>Presentar los microesclerocios no como un veneno, sino como una cápsula del tiempo biológica que permite al hongo &quot;esperar&quot; el momento exacto para actuar, devolviendo la inteligencia táctica al campo que la química eliminó.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Biorreactor Descentralizado</span></div>
+          <p>Describir la tecnología como la transición de aplicar productos externos a sembrar pequeñas fábricas microscópicas que producen su propio principio activo in situ, eliminando la logística del desperdicio químico.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · La Memoria de la Tierra</span></div>
+          <p>Enmarcar la apertura como el rescate de una tecnología que la evolución perfeccionó para proteger la vida vegetal, ahora escalada mediante ingeniería para corregir el desequilibrio industrial de las últimas décadas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b2">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">02</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 2A · Problema amplio </div>
+        <h2>El problema · <em>40% de pérdidas, USD 600B</em></h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>Hoy, el problema es enorme: hasta el 40% de la producción mundial de cultivos se pierde cada año por plagas y enfermedades, y aproximadamente la mitad de esas pérdidas son causadas por insectos. Esto representa pérdidas económicas de 600.000 millones de dólares anuales.</p><p>Por años usamos la misma solución: los insecticidas químicos. Hoy sabemos que es obsoleta, tóxica y ambientalmente inviable.</p><p>Afortunadamente, el mercado ya decidió también por la sustentabilidad: los bioinsecticidas, basados en microorganismos como hongos, bacterias y virus patógenos de insectos, representan hoy cerca del 20% del mercado insecticida y son el segmento de más rápido crecimiento, con tasas del 10 al 20% anual, muy por encima de los productos químicos.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Dimensionamiento del dolor</strong>El uso de cifras concretas sobre pérdidas de cultivos (40%) y el impacto económico (600 billones) permite dimensionar la magnitud del problema de forma inmediata para un inversor.</div><div class="bullet"><strong>Validación del mercado</strong>Identificar que el mercado ya &quot;decidió&quot; por la sustentabilidad y citar tasas de crecimiento específicas (10-20%) para bioinsecticidas valida la oportunidad de negocio y el timing.</div><div class="bullet"><strong>Narrativa de urgencia</strong>Al calificar la solución química como obsoleta e inviable, se crea una brecha de necesidad que solo una propuesta innovadora puede llenar.</div><div class="bullet"><strong>Claridad en la segmentación</strong>Dividir las pérdidas por tipo de agente (insectos) ayuda a enfocar la relevancia directa del producto dentro del problema global.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Saturación de estadísticas genéricas</strong>El uso del 40% de pérdida de cultivos y los 600 billones de dólares son cifras tan comunes que ya no impactan al inversor; se siente como una clase de geografía económica en lugar de una validación de un problema que Microsclera entienda de forma única.</div><div class="bullet"><strong>Falta de conexión con el &quot;Dolor&quot; del cliente</strong>Te enfocas en el problema macro global pero ignoras al usuario real (el productor); no mencionas cómo la baja persistencia actual afecta su rentabilidad diaria o su logística operativa, lo que debilita la empatía con la solución.</div><div class="bullet"><strong>Exceso de contexto de mercado</strong>Dedicar tanto espacio a explicar qué son los bioinsecticidas y su tasa de crecimiento le quita tiempo valioso a la descripción de la falla técnica específica que ustedes vienen a resolver; el inversor ya sabe que el mercado biológico crece, quiere saber por qué los actuales fallan.</div><div class="bullet"><strong>Debilidad en la transición disruptiva</strong>Al decir que el mercado &quot;ya decidió por la sustentabilidad&quot;, suavizas el conflicto; un pitch potente requiere mostrar que, pese a esa decisión, hay una barrera tecnológica insuperable que nadie más que ustedes ha podido romper.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · El Impuesto a la Ineficiencia</span></div>
+          <p>Enmarcar las pérdidas por plagas no como un costo inevitable, sino como un &quot;impuesto biológico&quot; que la industria paga por usar herramientas químicas obsoletas, posicionando a Microsclera como el auditor que elimina ese gasto.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Censo de lo Invisible</span></div>
+          <p>Describir el problema no desde el daño visible, sino como una crisis de &quot;puntos ciegos&quot; donde la química actual no llega, sugiriendo que el mercado de bioinsecticidas es la respuesta natural a una demanda de precisión que ya no acepta daños colaterales.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · La Paradoja de la Protección</span></div>
+          <p>Plantear que la agricultura actual está en una carrera armamentista donde más aplicaciones significan menos efectividad, introduciendo la necesidad de una tecnología que rompa la curva de toxicidad mediante inteligencia biológica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b3">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">03</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 2B · La limitación </div>
+        <h2>El bio funciona · <em>pero no dura en campo</em></h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>Sin embargo, tienen una gran limitación: su baja persistencia en campo: Una vez en campo son muy sensibles a la radiación solar y a las variaciones de temperatura, lo que obliga a realizar múltiples aplicaciones aumentando significativamente los costos del tratamiento.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Identificación precisa del &quot;Pain Point&quot;</strong>El texto señala directamente la baja persistencia como el talón de Aquiles de los biológicos actuales, validando un problema real y crítico para la adopción masiva.</div><div class="bullet"><strong>Justificación económica del problema</strong>Al conectar la sensibilidad ambiental con la necesidad de múltiples aplicaciones, se traduce una limitación técnica en un aumento de costos operativos, algo que cualquier inversor de AgTech entiende de inmediato.</div><div class="bullet"><strong>Especificidad técnica</strong>Mencionar factores abióticos concretos como la radiación solar y la temperatura demuestra conocimiento del entorno real del agricultor y prepara el terreno para presentar una solución de ingeniería de materiales o biológica robusta.</div><div class="bullet"><strong>Puente lógico hacia la solución</strong>La descripción de la limitación actual actúa como el &quot;set-up&quot; perfecto para introducir los microesclerocios como la tecnología capaz de romper ese cuello de botella.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Discurso genérico y macro</strong>El uso de cifras globales de 600.000 millones de dólares y porcentajes de FAO suena a presentación de Wikipedia; un inversor de Deep Tech busca el &quot;insight&quot; específico del problema que ustedes descubrieron y que nadie más está viendo.</div><div class="bullet"><strong>Falta de dolor del cliente</strong>No mencionan al agricultor ni a las empresas de agroquímicos; el problema se describe de forma abstracta sin aterrizar en la ineficiencia operativa o el costo real por hectárea que justifica cambiar la química por su solución.</div><div class="bullet"><strong>Argumento de mercado como muletilla</strong>Decir que el mercado &quot;ya decidió&quot; por la sustentabilidad es una simplificación peligrosa; el mercado biológico crece porque hay prohibiciones regulatorias y pérdida de eficacia, no solo por una decisión ética del consumidor.</div><div class="bullet"><strong>Ambigüedad en la tesis de inversión</strong>Al mezclar hongos, bacterias y virus en el contexto general, diluyen la importancia de por qué el enfoque específico en microesclerocios es la respuesta necesaria para el cuello de botella actual de la industria.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · La Dieta del Planeta</span></div>
+          <p>En lugar de hablar de pérdidas del 40%, presenta al sistema alimentario actual como un organismo &quot;desnutrido&quot; por plagas, donde los químicos son una medicina que intoxica al paciente mientras lo cura.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Impuesto de la Naturaleza</span></div>
+          <p>Enmarcar los 600.000 millones de dólares como un peaje ineficiente que pagamos a los insectos por no usar tecnología que hable su mismo idioma biológico, convirtiendo la pérdida en una oportunidad de rescate financiero.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · El Gran Giro del Consumidor</span></div>
+          <p>Describir el crecimiento de los biológicos no como una estadística de mercado, sino como una &quot;rebelión silenciosa&quot; en la góndola del supermercado que está forzando a la industria a jubilar las moléculas sintéticas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b4">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">04</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 3A · Propuesta de valor </div>
+        <h2>Microesclerocios · <em>un biorreactor natural</em></h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>MICROSCLERA tiene la solución: Los microesclerocios, una forma altamente resistente de los hongos patógenos de insectos. Son estructuras compactas que, una vez en el ambiente, funcionan como un biorreactor natural, liberando miles de células infectivas a lo largo del tiempo.</p><p>Esto permite algo clave: mayor persistencia, mayor eficiencia y menos aplicaciones.</p><p>Además, el hongo puede colonizar toda la planta protegiendo distintos tipos de cultivo también desde su interior, estimulando su crecimiento y controlando sus plagas en suelo, raíces, tallos y hojas:</p><p>Por lo tanto, tenemos un solo producto con múltiples atributos: bioinsecticida, biolarvicida y además bioestimulante de los cultivos.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Definición de ventaja competitiva</strong>El uso de la metáfora del biorreactor natural explica de forma sencilla y potente cómo los microesclerocios resuelven el problema de la persistencia, transformando un concepto técnico en un beneficio operativo tangible.</div><div class="bullet"><strong>Propuesta de valor multienfoque</strong>Identificar el producto como bioinsecticida, biolarvicida y bioestimulante amplía significativamente el mercado potencial y aumenta el atractivo para el productor al ofrecer una solución integral.</div><div class="bullet"><strong>Claridad en el mecanismo de acción</strong>Explicar que el hongo coloniza la planta desde el interior añade una capa de innovación (endofitismo) que diferencia la tecnología de las aplicaciones superficiales convencionales.</div><div class="bullet"><strong>Articulación de eficiencia</strong>La conexión directa entre la resistencia de la estructura y la reducción de aplicaciones aborda el principal punto de dolor del agricultor: el costo y la logística del tratamiento.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Falta de cuantificación del dolor</strong>Decir que la baja persistencia aumenta &quot;significativamente&quot; los costos es vago; sin un porcentaje de sobrecosto o una comparativa de aplicaciones (ej. 1 vs 5), el inversor no dimensiona la magnitud del problema económico para el productor.</div><div class="bullet"><strong>Omisión de la brecha logística</strong>No se menciona el costo de oportunidad ni la complejidad operativa de re-aplicar productos en grandes extensiones, lo que debilita el argumento de por qué la persistencia es el &quot;killer factor&quot; en la adopción tecnológica.</div><div class="bullet"><strong>Enfoque excesivamente técnico</strong>Te centras en la radiación y la temperatura como causas, pero olvidas el impacto en la eficacia del control; si el hongo muere, la plaga avanza, y esa pérdida de rendimiento es lo que realmente asusta al mercado, no solo el costo del producto.</div><div class="bullet"><strong>Ausencia de contexto competitivo</strong>No aclaras si este es un problema de todos los biológicos o solo de los actuales; al no diferenciar, corres el riesgo de que el inversor piense que es una limitación intrínseca de la categoría que ustedes tampoco podrán resolver.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · El Protector con Armadura de Quitina</span></div>
+          <p>Comparar los bioinsecticidas actuales con soldados enviados a la guerra sin uniforme ni provisiones, destinados a caer ante el primer rayo de sol, mientras que los microesclerocios son la unidad de élite equipada con una armadura biológica impenetrable.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Dilema del Hielo al Sol</span></div>
+          <p>Plantear la limitación actual como intentar apagar un incendio con cubos de hielo que se derriten antes de tocar las llamas; una fragilidad que convierte la inversión del productor en vapor en cuestión de horas.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · La Tiranía del Calendario de Aplicación</span></div>
+          <p>Describir la baja persistencia no como un fallo técnico, sino como una cadena que esclaviza al agricultor a un ciclo interminable de re-aplicaciones, donde el costo logístico devora la rentabilidad y la paciencia de la tierra.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b5">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">05</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 3B · Descripción técnica </div>
+        <h2>"No existe en la naturaleza · <em>sabemos producirlo</em>"</h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>Lo más importante es que esta forma del hongo no existe en la naturaleza, por lo que debe ser producida artificialmente. Y nosotros sabemos cómo hacerlo.</p><p>Hemos logrado:</p><p>entender los mecanismos bioquímicos y moleculares que regulan su formación</p><p>demostrar su mayor resistencia a condiciones ambientales</p><p>validar su efecto bioinsecticida y su persistencia en cultivos como soja</p><p>Esto nos da una ventaja competitiva única.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Exclusividad Tecnológica</strong>Al plantear que el activo no es natural se establece una barrera de entrada basada en un proceso de manufactura complejo y difícil de replicar.</div><div class="bullet"><strong>Profundidad Científica</strong>El enfoque en mecanismos moleculares demuestra un dominio técnico que permite optimizar y escalar la solución con base en evidencia sólida.</div><div class="bullet"><strong>Hitos de Validación</strong>La mención de ensayos en soja demuestra tracción técnica y validación en un mercado de gran escala, esencial para la tesis de inversión en Deep Tech.</div><div class="bullet"><strong>Claridad en el Valor</strong>Definir el conocimiento de fabricación como la ventaja competitiva central ayuda a entender rápidamente dónde reside el valor estratégico de la compañía.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Exceso de tecnicismos sin contexto de negocio</strong>El término microesclerocios y la analogía del biorreactor natural pueden fascinar a un científico, pero para un inversor de Venture Capital, si no se traduce inmediatamente en una ventaja de costos o de escalabilidad industrial, es solo ruido técnico que ralentiza el pitch.</div><div class="bullet"><strong>El riesgo del &quot;producto milagro&quot;</strong>Presentar un solo activo que es bioinsecticida, biolarvicida y bioestimulante genera una señal de alerta inmediata sobre el foco de la compañía; intentar ser todo para todos en una etapa temprana suele interpretarse como una falta de estrategia de mercado clara y diluye la potencia de la solución principal.</div><div class="bullet"><strong>Falta de diferenciación competitiva real</strong>Decir que permite mayor persistencia y eficiencia es una promesa estándar en el sector; sin métricas comparativas directas contra los líderes químicos o biológicos actuales, la propuesta de valor queda en una afirmación teórica que carece de la fuerza necesaria para demostrar una disrupción real.</div><div class="bullet"><strong>Ambigüedad en la protección intelectual</strong>No se menciona si este mecanismo o el proceso de estabilización está protegido por patentes, lo que deja la puerta abierta a dudas sobre la barrera de entrada y la facilidad con la que un competidor con mayor capacidad de manufactura podría replicar la solución.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · El Caballo de Troya Biotecnológico</span></div>
+          <p>Presentar los microesclerocios como una tecnología de infiltración que habita y fortalece al cultivo desde su interior, transformando la defensa pasiva en un sistema de vigilancia activa y metabólica.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Sistema Operativo de Resiliencia</span></div>
+          <p>Describir la solución como un software biológico que se instala en el suelo y la planta para automatizar la protección, eliminando la necesidad de intervenciones humanas constantes y reactivas.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · Biorreactores de Punto Final</span></div>
+          <p>Reenmarcar la tecnología como la descentralización definitiva de la síntesis química, donde cada microesclerocio es una unidad de manufactura inteligente que produce el activo solo donde y cuando el insecto ataca.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block is-optional" id="b6">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">06</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 3 · [Opcional] Tendencia de mercado <span class="opt-badge">Opcional</span></div>
+        <h2>Tendencia de mercado · <em>USD 10.4B → 33B (CAGR 15.5%)</em></h2>
+      </div>
+    </div>
+    
+    <div class="original empty">
+      <div class="label">Bloque opcional · sin texto actual</div>
+      <p>Esta sección no estaba en el pitch v1. El feedback explora qué pasaría si se incluyera.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Crecimiento acelerado y oportunidad de mercado</strong>Se destaca una proyección de crecimiento del mercado de bioinsecticidas de 10.44 mil millones de dólares en 2026 a 33.08 mil millones para 2034, con una tasa compuesta anual del 15.5%, lo que valida la escala de la oportunidad para inversores.</div><div class="bullet"><strong>Alineación con cambios regulatorios</strong>La mención de las restricciones a pesticidas químicos en la UE y EE. UU. refuerza la tesis de inversión al posicionar los productos biológicos no como una alternativa, sino como la única vía sostenible y legal para la protección de cultivos a largo plazo.</div><div class="bullet"><strong>Ventaja competitiva por eficiencia en I+D</strong>El contexto subraya que el tiempo y costo de desarrollo de bioinsecticidas es menor comparado con los convencionales, lo que se traduce en una ventaja económica directa para el fabricante y un retorno de inversión potencialmente más rápido.</div><div class="bullet"><strong>Segmentación estratégica en cultivos de alto valor</strong>Identificar la adopción temprana en frutas, hortalizas y agricultura orgánica permite enfocar los esfuerzos comerciales iniciales en nichos de alta rentabilidad y demanda de productos libres de residuos.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Falta de propiedad intelectual explícita</strong>Decir que &quot;saben cómo hacerlo&quot; es una declaración de fe; para un inversor de Deep Tech, si no mencionan patentes solicitadas o secretos industriales protegidos sobre esos mecanismos bioquímicos, la ventaja competitiva es inexistente y fácilmente copiable.</div><div class="bullet"><strong>Abstracción técnica sin métricas</strong>Afirmar que comprenden los mecanismos moleculares no es un hito de valor si no se traduce en eficiencia de producción; falta mencionar rendimientos, títulos de concentración o costos por gramo que demuestren que la producción artificial es económicamente viable.</div><div class="bullet"><strong>Debilidad en la validación de campo</strong>Mencionar solo el cultivo de soja resulta insuficiente para una &quot;plataforma robusta&quot;; un inversor querrá ver datos comparativos frente a estándares químicos actuales o biológicos líderes (como otras cepas de Beauveria) para creer en la &quot;mayor resistencia&quot;.</div><div class="bullet"><strong>Arrogancia científica vs. realidad biológica</strong>Afirmar que &quot;esta forma del hongo no existe en la naturaleza&quot; es arriesgado y puede restarle credibilidad técnica ante expertos que conocen las estructuras de resistencia fúngica; la innovación real está en el proceso de inducción masiva, no en la invención de una biología nueva.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · Codificadores de la Resiliencia Fúngica</span></div>
+          <p>En lugar de &quot;producir artificialmente&quot;, presentar el proceso como la decodificación de un lenguaje biológico que nos permite &quot;programar&quot; al hongo para que active su modo de máxima resistencia a voluntad, algo que la naturaleza solo reserva para eventos extremos.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Bio-Diseño de la Inmunidad</span></div>
+          <p>Describir los microesclerocios como una pieza de ingeniería biológica propietaria, donde hemos rediseñado la arquitectura del microorganismo para que sea invulnerable al clima, convirtiendo un hongo común en una herramienta de precisión industrial.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · Patentes de la Supervivencia</span></div>
+          <p>Enmarcar los logros científicos no como validaciones técnicas, sino como el dominio absoluto sobre el ciclo de vida del hongo, posicionando a Microsclera como los únicos capaces de &quot;domesticar&quot; esta forma biológica para su uso en agricultura extensiva.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b7">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">07</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 4 · Equipo </div>
+        <h2>25 años · <em>referentes mundiales</em></h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>Somos un equipo consolidado integrado por referentes mundiales en la temática, con más de 25 años trabajando en bioinsecticidas. Describimos por primera vez los microesclerocios en una de las especies fúngicas más ampliamente utilizadas en productos comerciales bioinsecticidas. Somos la primera empresa en el mundo que los aplica para el control de plagas y los únicos con un conocimiento profundo de los mecanismos que permiten escalar esta tecnología y convertirla en una plataforma robusta para el control biológico.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Experiencia y autoridad</strong>Los 25 años de trayectoria y el estatus de referentes mundiales otorgan una credibilidad inmediata, fundamental para atraer inversión en ciencia aplicada.</div><div class="bullet"><strong>Primicia científica</strong>Haber descrito los microesclerocios por primera vez posiciona al equipo como los creadores del conocimiento base, asegurando una ventaja competitiva de origen.</div><div class="bullet"><strong>Liderazgo de mercado</strong>Declararse como la primera empresa en el mundo en aplicar esta tecnología para el control de plagas destaca la audacia y la visión pionera del proyecto.</div><div class="bullet"><strong>Dominio del escalado</strong>El conocimiento profundo de los mecanismos para transformar la ciencia en una plataforma robusta demuestra que el equipo entiende el desafío de pasar del laboratorio a la industria.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Ausencia de validación de mercado específica</strong>La sección carece de datos sobre el tamaño del mercado objetivo o proyecciones de demanda que justifiquen la oportunidad de inversión, limitándose a una descripción técnica sin contexto comercial.</div><div class="bullet"><strong>Falta de diferenciación competitiva</strong>No se mencionan las tendencias actuales de los competidores ni cómo la solución de Microsclera se posiciona frente a otras alternativas emergentes en el sector de bioinsecticidas.</div><div class="bullet"><strong>Desconexión con las necesidades del cliente</strong>No se explica por qué los agricultores o las empresas de agroquímicos están demandando esta tecnología específica ahora, fallando en demostrar el &quot;market-fit&quot;.</div><div class="bullet"><strong>Ambigüedad en la escalabilidad</strong>La tendencia de mercado no está vinculada a la capacidad de producción o distribución, lo que deja dudas sobre si la empresa puede capturar una porción significativa del crecimiento del sector.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · El Oráculo de la Resistencia</span></div>
+          <p>Presentar la tendencia no como un cambio de mercado, sino como el momento en que la naturaleza recupera su lugar frente a la obsolescencia química, donde Microsclera actúa como el puente tecnológico necesario.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · El Código de Supervivencia</span></div>
+          <p>Describir el crecimiento de los biológicos como una migración masiva hacia sistemas con &quot;memoria&quot; y persistencia, posicionando a los microesclerocios como el estándar de oro en esta nueva era de agricultura regenerativa.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · Simbiosis Industrial</span></div>
+          <p>Enmarcar la demanda de sustentabilidad como una evolución forzada del ecosistema donde solo las tecnologías que funcionan como biorreactores vivos podrán escalar y sobrevivir a las regulaciones globales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block is-optional" id="b8">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">08</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 4 · [Opcional] Tracción Now/Next/Later <span class="opt-badge">Opcional</span></div>
+        <h2>Tracción · <em>Now / Next / Later</em></h2>
+      </div>
+    </div>
+    
+    <div class="original empty">
+      <div class="label">Bloque opcional · sin texto actual</div>
+      <p>Esta sección no estaba en el pitch v1. El feedback explora qué pasaría si se incluyera.</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Proyección de escalabilidad</strong>El esquema Now/Next/Later permite a los inversores visualizar una hoja de ruta clara, transformando una solución técnica en un modelo de negocio con hitos de crecimiento definidos.</div><div class="bullet"><strong>Gestión de expectativas</strong>Al segmentar la tracción, se establece un compromiso realista sobre el desarrollo de la tecnología, diferenciando lo que ya está validado de los objetivos de expansión a mediano y largo plazo.</div><div class="bullet"><strong>Enfoque en ejecución</strong>Esta estructura demuestra que el equipo no solo posee excelencia científica, sino también una mentalidad orientada a resultados y al cumplimiento de fases críticas de desriesgue.</div><div class="bullet"><strong>Visión estratégica de plataforma</strong>La sección permite presentar a Microsclera no como un producto único, sino como una plataforma capaz de evolucionar y capturar nuevos segmentos de mercado de forma secuencial.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Sesgo académico predominante</strong>El texto suena más a un currículum universitario que al equipo de una startup de alto crecimiento; mencionar &quot;25 años&quot; y &quot;referentes mundiales&quot; sugiere autoridad, pero no necesariamente la agilidad y el hambre de ejecución que buscamos en fundadores de Deep Tech.</div><div class="bullet"><strong>Falta de perfiles complementarios</strong>Se enfocan demasiado en la capacidad científica pero omiten por completo quién tiene la visión de negocio, quién maneja la estrategia comercial y quién liderará la recaudación de capital; un equipo solo de científicos es una señal de alerta sobre la viabilidad de mercado.</div><div class="bullet"><strong>Ambigüedad en la exclusividad</strong>Decir que son los &quot;únicos con conocimiento profundo&quot; es una afirmación arriesgada y difícil de validar que puede generar escepticismo si no se respalda inmediatamente con una cartera de patentes robusta o secretos industriales específicos.</div><div class="bullet"><strong>Ausencia de mentalidad emprendedora</strong>No mencionan hitos de ejecución de negocios previos ni experiencia llevando productos del laboratorio al mercado, lo que deja dudas sobre si el equipo podrá transicionar de investigadores a empresarios exitosos.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · Los Traductores del Código Fúngico</span></div>
+          <p>Presentar al equipo no como académicos, sino como los únicos capaces de &quot;traducir&quot; un lenguaje biológico que estuvo oculto por millones de años, convirtiendo un hallazgo de laboratorio en un estándar industrial global.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · De la Tesis a la Táctica</span></div>
+          <p>Enmarcar la experiencia de 25 años no como antigüedad, sino como una ventaja táctica de &quot;insider&quot; que les permitió ver la oportunidad de los microesclerocios donde otros solo veían curiosidad científica, asegurando que el conocimiento es la principal barrera de entrada.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · El Legado de la Persistencia</span></div>
+          <p>Conectar la resistencia biológica del producto con la tenacidad del equipo; proyectar que la misma robustez que le dan al hongo para sobrevivir en el campo es la que ellos aportan para escalar la empresa y dominar el mercado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="b9">
+  <div class="container reveal">
+    <div class="block-header">
+      <div class="block-number">09</div>
+      <div class="block-title-wrap">
+        <div class="eyebrow">Bloque 5 · Cierre </div>
+        <h2>"Redefiniendo cómo se producen <em>los alimentos del futuro</em>"</h2>
+      </div>
+    </div>
+    
+    <div class="original">
+      <div class="label">Texto actual del pitch</div>
+      <p>En MICROSCLERA no solo estamos desarrollando un nuevo bioinsecticida: estamos redefiniendo cómo se controlan las plagas en el agro y como se producen los alimentos del futuro haciendo que lo biológico sea más eficiente, más estable y competitivo a gran escala</p>
+    </div>
+
+    <div class="hats">
+      <div class="hat hat-yellow">
+        <div class="hat-label">Amarillo · Valorar</div>
+        <div class="bullet"><strong>Ambición sistémica</strong>El cierre trasciende el producto para proponer una transformación en la cadena de producción de alimentos, lo que eleva el perfil de la startup de una empresa de bioinsumos a una de impacto global.</div><div class="bullet"><strong>Escalabilidad competitiva</strong>Al mencionar explícitamente la eficiencia, estabilidad y competitividad a gran escala, se abordan las dudas clásicas de los inversores sobre si las soluciones biológicas pueden realmente reemplazar a los químicos en volumen.</div><div class="bullet"><strong>Visión de futuro</strong>Conecta la tecnología actual con la alimentación del futuro, alineando el proyecto con tesis de inversión de largo plazo enfocadas en seguridad alimentaria y sostenibilidad.</div><div class="bullet"><strong>Reafirmación de identidad</strong>Volver a mencionar el nombre de la empresa al cierre refuerza el posicionamiento de marca y deja una impresión final de liderazgo y propósito claro.</div>
+      </div>
+      <div class="hat hat-black">
+        <div class="hat-label">Negro · Criticar</div>
+        <div class="bullet"><strong>Falta de validación fáctica</strong>El espacio está vacío, lo que para un inversor de Deep Tech significa que no hay hitos, ni patentes, ni pruebas de concepto reales; un &quot;Now&quot; vacío es una señal de alerta de que el proyecto es solo una idea teórica sin ejecución.</div><div class="bullet"><strong>Ambigüedad en la hoja de ruta</strong>Sin definir el &quot;Next&quot; y el &quot;Later&quot;, no hay una tesis de inversión clara; no se puede evaluar el riesgo ni el potencial de retorno si no se explica cómo se planea pasar del laboratorio al mercado extensivo.</div><div class="bullet"><strong>Desconexión con el despliegue comercial</strong>La ausencia de tracción impide entender si la tecnología es escalable o si es económicamente viable; un pitch de cierre que promete &quot;competitividad a gran escala&quot; pierde toda credibilidad si no se respalda con una secuencia de validación técnica y regulatoria.</div><div class="bullet"><strong>Debilidad en la construcción de confianza</strong>Al no completar la tracción, el equipo parece carecer de una visión estratégica de negocios, reforzando el sesgo de que son solo científicos sin capacidad de gestión para llevar un producto al mundo real.</div>
+      </div>
+      <div class="hat hat-green">
+        <div class="hat-label">Verde · Nuevas ideas</div>
+        <div class="bullet" style="font-style: italic; color: var(--muted); font-size: 13.5px;">Tres caminos narrativos para explorar → ver alternativas A/B/C abajo.</div>
+      </div>
+    </div>
+
+    <div class="alts">
+      <div class="alts-header">
+        <div class="alts-title">3 caminos narrativos · sombrero verde</div>
+        <div class="alts-hint">No elegir uno · mezclar lo que resuene</div>
+      </div>
+      <div class="alts-grid">
+        <div class="alt alt-a">
+          <div class="alt-tag"><span class="letter">A</span><span>Camino · La Conquista del Desierto Químico</span></div>
+          <p>Presentar la tracción no como una lista de tareas, sino como el despliegue secuencial de un ecosistema que recupera territorios perdidos, donde el &quot;Ahora&quot; es la validación del arma biológica y el &quot;Después&quot; es la soberanía total del campo.</p>
+        </div>
+        <div class="alt alt-b">
+          <div class="alt-tag"><span class="letter">B</span><span>Camino · Metamorfosis de la Eficacia</span></div>
+          <p>Describir el camino desde el laboratorio al campo como la evolución natural de una especie que se adapta para dominar, transformando hitos técnicos en momentos donde lo imposible se vuelve estándar industrial.</p>
+        </div>
+        <div class="alt alt-c">
+          <div class="alt-tag"><span class="letter">C</span><span>Camino · El Pulso del Crecimiento</span></div>
+          <p>Enmarcar el progreso como una serie de latidos rítmicos que sincronizan la ciencia con la demanda del mercado, mostrando que cada fase de tracción es una prueba de resistencia superada por una tecnología diseñada para perdurar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="synthesis" id="sintesis">
+  <div class="container reveal">
+    <div class="eyebrow">Síntesis · próximos pasos</div>
+    <h2>Si tienen <em>4 horas</em>, atacar esto primero:</h2>
+    <p class="intro">
+      Los 9 bloques tienen mejoras posibles, pero no todas mueven la aguja igual. Si Carla y Nico priorizan estas 5 acciones, el pitch v1 sube de "bueno" a "fondeable" para un comité Deep Tech, sin reescribir todo.
     </p>
-
-    <p class="lead">
-      Desarrollamos un nuevo principio activo — los <strong>microesclerocios</strong> — que funcionan como un biorreactor natural en el suelo, resistente al sol, la temperatura y compatible con el manejo agronómico actual.
+    <div class="priorities">
+      <div class="priority">
+        <div class="rank">01</div>
+        <div class="what"><strong>Llenar los dos bloques opcionales (Tendencia + Tracción Now/Next/Later).</strong> Ambos hoy están vacíos. El negro lo marca como red flag crítico: sin tracción, el pitch parece teórico. Datos de mercado (USD 10.4B → 33B, CAGR 15.5%) + hitos Now/Next/Later con fechas.</div>
+        <div class="effort">~ 90 min</div>
+      </div>
+      <div class="priority">
+        <div class="rank">02</div>
+        <div class="what"><strong>Reescribir el bloque equipo con perfiles complementarios.</strong> Nombrar a Carla + Nico + roles científicos, pero sumar quién lidera negocio / comercial / captación. El negro de Fede/Mati/Romi marca "solo científicos = red flag de viabilidad".</div>
+        <div class="effort">~ 60 min</div>
+      </div>
+      <div class="priority">
+        <div class="rank">03</div>
+        <div class="what"><strong>Cuantificar el dolor económico</strong> en los bloques 2B y 3A. Pasar de "aumenta significativamente los costos" a "1 vs 5 aplicaciones por temporada, X USD/ha". Y mencionar el estado de las patentes / IP protegida.</div>
+        <div class="effort">~ 45 min</div>
+      </div>
+      <div class="priority">
+        <div class="rank">04</div>
+        <div class="what"><strong>Resolver el "producto milagro" del bloque 3A.</strong> Bioinsecticida + biolarvicida + bioestimulante en una etapa pre-seed dispara alerta de falta de foco. Definir un caso de uso prioritario (ej: soja como entrada) y mostrar los otros como roadmap.</div>
+        <div class="effort">~ 30 min</div>
+      </div>
+      <div class="priority">
+        <div class="rank">05</div>
+        <div class="what"><strong>Atacar la "arrogancia científica".</strong> "No existe en la naturaleza" suena arriesgado. Reformular a "Forma inducible de baja prevalencia en la naturaleza · sabemos cómo producirla a escala industrial" — mismo moat, menos exposición.</div>
+        <div class="effort">~ 15 min</div>
+      </div>
+    </div>
+    <p class="intro" style="margin-top: 44px; margin-bottom: 0;">
+      Los tres caminos A/B/C de cada bloque no son alternativas excluyentes: son materia prima narrativa. La recomendación es mezclar el rigor cuantitativo (donde el inversor lo pide) con una metáfora memorable por bloque — no más de una.
     </p>
-
-    <div class="signature">
-      <div class="avatar">NP</div>
-      <div>Presentado por <strong>Nico Pedrini</strong> · Fundador</div>
-    </div>
   </div>
 </section>
 
-<!-- ============ PROBLEMA BROADER ============ -->
-<!-- Fix 3-hats Bloque 2: prosa más corta, fuentes citadas en cada stat -->
-<section>
-  <div class="container reveal">
-    <div class="eyebrow">El problema</div>
-    <h2 class="section-title">Una solución obsoleta para un problema <em>de 600.000 millones</em>.</h2>
-    <div class="section-body">
-      <p>
-        El insecticida químico es <strong>obsoleto, tóxico y ambientalmente inviable</strong>. El mercado ya decidió: los bioinsecticidas basados en microorganismos son la nueva estrategia.
-      </p>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="num">40<small>%</small></div>
-        <div class="label">de la producción mundial de cultivos se pierde por plagas y enfermedades.</div>
-        <div class="source">[REEMPLAZAR: FAO 2023]</div>
-      </div>
-      <div class="stat">
-        <div class="num">USD 600<small>B</small></div>
-        <div class="label">en pérdidas económicas anuales asociadas.</div>
-        <div class="source">[REEMPLAZAR: CABI / FAO]</div>
-      </div>
-      <div class="stat">
-        <div class="num">~50<small>%</small></div>
-        <div class="label">de esas pérdidas son causadas directamente por insectos.</div>
-        <div class="source">[REEMPLAZAR: Fuente]</div>
-      </div>
-    </div>
+<footer class="fb">
+  <div class="container">
+    <div class="brand"><span class="brand-mark"></span><span>MICROSCLERA · PITCH FEEDBACK · v2</span></div>
+    <div>Para Carla Huarte Bonnet + Nico Pedrini · Generado a partir del refinamiento del pitch v1 (13-05-2026)</div>
   </div>
-</section>
-
-<!-- ============ LIMITATION ============ -->
-<!-- Fix 3-hats Bloque 3: reemplazar quote sin autor por tabla comparativa de costos -->
-<section>
-  <div class="container reveal">
-    <div class="eyebrow">La limitación</div>
-    <h2 class="section-title">El bioinsecticida funciona. Pero <em>no dura</em>.</h2>
-    <div class="section-body">
-      <p>
-        Los bioinsecticidas actuales tienen <strong>baja persistencia en campo</strong>: son sensibles a la radiación solar y a las variaciones de temperatura. Esto obliga a múltiples aplicaciones por temporada, lo que dispara el costo y limita la adopción a escala industrial.
-      </p>
-    </div>
-
-    <div class="comparison">
-      <div class="comparison-row head">
-        <div>Comparativa por temporada</div>
-        <div>Insecticida químico</div>
-        <div>Bioinsecticida actual</div>
-        <div>Microsclera</div>
-      </div>
-      <div class="comparison-row">
-        <div class="label">Aplicaciones por temporada</div>
-        <div class="value">2–3 <small>convencional</small></div>
-        <div class="value">3–4 <small>por baja persistencia</small></div>
-        <div class="value win">1 <small>una sola pasada</small></div>
-      </div>
-      <div class="comparison-row">
-        <div class="label">Persistencia ambiental</div>
-        <div class="value">Alta <small>pero tóxica</small></div>
-        <div class="value">Baja <small>sol / temp</small></div>
-        <div class="value win">Alta <small>biorreactor</small></div>
-      </div>
-      <div class="comparison-row">
-        <div class="label">Costo del tratamiento</div>
-        <div class="value">[REEMPLAZAR] <small>USD/ha</small></div>
-        <div class="value">[REEMPLAZAR] <small>USD/ha</small></div>
-        <div class="value win">[REEMPLAZAR] <small>USD/ha</small></div>
-      </div>
-    </div>
-    <p class="comparison-note">Valores estimados de referencia. Completar con datos propios de ensayos en campo o fuentes citadas.</p>
-  </div>
-</section>
-
-<!-- ============ ¿POR QUÉ AHORA? (BLOQUE NUEVO — insight Peire) ============ -->
-<!-- Agregado desde alternativa A — Peire suele exigir el "why now" -->
-<section class="why-now">
-  <div class="container reveal">
-    <div class="eyebrow">¿Por qué ahora?</div>
-    <h2 class="section-title">Tres fuerzas <em>convergen</em> en 2026.</h2>
-    <div class="section-body">
-      <p>
-        El bioinsecticida pasó de promesa a necesidad. Regulación, demanda y economía juegan a favor — pero la persistencia sigue siendo el cuello de botella.
-      </p>
-    </div>
-
-    <div class="why-now-grid">
-      <div class="why-now-card">
-        <div class="yr">Regulación</div>
-        <h3>Químicos en retirada</h3>
-        <p>UE, Brasil y EE.UU. avanzan en prohibiciones de moléculas clave. El productor necesita reemplazos viables, no parches. <span style="color:var(--muted); font-style:italic;">[REEMPLAZAR: cita normativa específica]</span></p>
-      </div>
-      <div class="why-now-card">
-        <div class="yr">Demanda</div>
-        <h3>Food-tech y trazabilidad</h3>
-        <p>Las cadenas agroalimentarias exigen producción libre de residuos químicos. Los offtakers premium pagan diferencial real por bio.</p>
-      </div>
-      <div class="why-now-card">
-        <div class="yr">Economía</div>
-        <h3>El químico se encarece</h3>
-        <p>Insumos químicos en alza estructural; el bio ya es competitivo en costo si la persistencia se resuelve. Microsclera la resuelve.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOLUCIÓN VALOR ============ -->
-<!-- Fix 3-hats Bloque 4: iconos SVG reales, mini-metric por pilar, endófito destacado aparte -->
-<section class="solution">
-  <div class="container reveal">
-    <div class="eyebrow">La solución</div>
-    <h2 class="section-title">Microesclerocios: un <em>biorreactor natural</em> en el suelo.</h2>
-    <div class="section-body">
-      <p>
-        Los <strong>microesclerocios</strong> son una forma altamente resistente de hongos patógenos de insectos. Estructuras compactas que, una vez en el ambiente, liberan miles de células infectivas a lo largo del tiempo.
-      </p>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M12 7v5l3 2"/>
-          </svg>
-        </div>
-        <div class="metric">3–5×<small>vs bio actual</small></div>
-        <h3>Persistencia</h3>
-        <p>Resistencia a radiación solar y variaciones térmicas que limitan a los bioinsecticidas convencionales.</p>
-      </div>
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M3 12h4l3-8 4 16 3-8h4"/>
-          </svg>
-        </div>
-        <div class="metric">1 aplicación<small>vs 3–4 actual</small></div>
-        <h3>Eficiencia</h3>
-        <p>Liberación sostenida de células infectivas desde una sola aplicación por temporada.</p>
-      </div>
-      <div class="pillar">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 21V9"/>
-            <path d="M6 15c0-3 3-6 6-6s6 3 6 6"/>
-            <path d="M9 21h6"/>
-          </svg>
-        </div>
-        <div class="metric">↓ costo<small>USD/ha temporada</small></div>
-        <h3>Menos aplicaciones</h3>
-        <p>Reducción directa del costo total y de la huella operativa en campo del productor.</p>
-      </div>
-    </div>
-
-    <div class="endophyte-note">
-      <span class="tag">Segundo modo de acción · endófito</span>
-      Además, el hongo puede <strong>colonizar toda la planta</strong> desde adentro, protegiendo distintos tipos de cultivos y estimulando su crecimiento. No es solo un bioinsecticida: es una plataforma de simbiosis vegetal.
-    </div>
-  </div>
-</section>
-
-<!-- ============ VENTAJA TÉCNICA ============ -->
-<!-- Fix 3-hats Bloque 5: micro-evidencia por logro con placeholder honesto -->
-<section class="edge">
-  <div class="container reveal">
-    <div class="eyebrow">Nuestra ventaja</div>
-    <h2 class="section-title">Esta forma del hongo <em>no existe en la naturaleza</em>. Y sabemos cómo producirla.</h2>
-    <div class="section-body">
-      <p>
-        Los microesclerocios deben ser producidos artificialmente. Microsclera es la <strong>primera empresa del mundo</strong> en aplicarlos al control de plagas y la única con conocimiento profundo de los mecanismos que permiten escalar esta tecnología.
-      </p>
-    </div>
-
-    <div class="achievements">
-      <div class="achievement">
-        <div class="idx">01</div>
-        <div class="desc">Entendemos los <strong>mecanismos bioquímicos y moleculares</strong> que regulan la formación de los microesclerocios.</div>
-        <div class="proof">
-          <span class="placeholder">[REEMPLAZAR: paper publicado · revista · año]</span>
-        </div>
-      </div>
-      <div class="achievement">
-        <div class="idx">02</div>
-        <div class="desc">Demostramos su <strong>mayor resistencia</strong> a condiciones ambientales adversas (radiación, temperatura).</div>
-        <div class="proof">
-          <span class="placeholder">[REEMPLAZAR: patente WO/XXXX · estado]</span>
-        </div>
-      </div>
-      <div class="achievement">
-        <div class="idx">03</div>
-        <div class="desc">Validamos su <strong>efecto bioinsecticida</strong> y persistencia en cultivos comerciales como soja.</div>
-        <div class="proof">
-          <span class="placeholder">[REEMPLAZAR: hectáreas / partner / temporada]</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EQUIPO ============ -->
-<!-- Fix 3-hats Bloque 6 (crítico): cards con nombres + roles + instituciones. Todo en placeholders honestos. -->
-<section class="team">
-  <div class="container reveal">
-    <div class="eyebrow">El equipo</div>
-    <h2 class="section-title">25 años escalando lo que <em>nadie más</em> sabe hacer.</h2>
-    <div class="section-body">
-      <p>
-        Describimos por primera vez los microesclerocios en una de las especies fúngicas más utilizadas en bioinsecticidas comerciales. Equipo consolidado, referentes mundiales en la temática.
-      </p>
-    </div>
-
-    <div class="team-grid">
-      <div class="person-card">
-        <div class="photo">NP</div>
-        <div class="info">
-          <h3>Nico Pedrini</h3>
-          <div class="role">Fundador · [REEMPLAZAR: rol]</div>
-          <p class="cred">[REEMPLAZAR: PhD en X · Institución · N papers en hongos entomopatógenos · Año de comienzo en la temática]</p>
-        </div>
-      </div>
-      <div class="person-card">
-        <div class="photo">CH</div>
-        <div class="info">
-          <h3>Carla Huarte Bonnet</h3>
-          <div class="role">Co-fundadora · Científica</div>
-          <p class="cred">[REEMPLAZAR: PhD · Institución · líneas de investigación · papers clave en hongos entomopatógenos / microesclerocios]</p>
-        </div>
-      </div>
-      <div class="person-card placeholder">
-        <div class="photo">?</div>
-        <div class="info">
-          <h3>[REEMPLAZAR: Nombre 3]</h3>
-          <div class="role">[Rol]</div>
-          <p class="cred">[REEMPLAZAR: credenciales clave]</p>
-        </div>
-      </div>
-      <div class="person-card placeholder">
-        <div class="photo">?</div>
-        <div class="info">
-          <h3>[REEMPLAZAR: Nombre 4]</h3>
-          <div class="role">[Rol]</div>
-          <p class="cred">[REEMPLAZAR: credenciales clave]</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="institutions">
-      <div class="tag">Soporte institucional</div>
-      <div class="logos">
-        <div class="inst-logo placeholder">[REEMPLAZAR: CONICET]</div>
-        <div class="inst-logo placeholder">[REEMPLAZAR: Universidad]</div>
-        <div class="inst-logo placeholder">[REEMPLAZAR: INTA / partner]</div>
-        <div class="inst-logo placeholder">[REEMPLAZAR: GRIDX / acelerador]</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CIERRE ============ -->
-<!-- Fix 3-hats Bloque 7: mantener cierre narrativo + sumar métrica de impacto (C-Casadevall hipótesis) + footer contacto discreto -->
-<section class="closing">
-  <div class="container reveal">
-    <div class="eyebrow">Hacia adelante</div>
-    <h2>No solo desarrollamos un nuevo bioinsecticida. Estamos <em>redefiniendo</em> cómo se controlan las plagas y cómo se producen los alimentos del futuro.</h2>
-    <div class="section-body" style="color: rgba(250, 248, 242, 0.78); font-size: 18px; max-width: 60ch;">
-      <p>
-        Hacemos que lo biológico sea <strong style="color: var(--accent); font-weight: 500;">más eficiente, más estable y competitivo a gran escala</strong>.
-      </p>
-    </div>
-
-    <div class="impact-metric">
-      <div>
-        <div class="big">[REEMPLAZAR: X M ha]</div>
-      </div>
-      <div class="desc">
-        <span class="placeholder">[REEMPLAZAR con métrica de impacto escalable, ej: "hectáreas potenciales bajo manejo bio si Microsclera alcanza el 5% del mercado regional en 5 años"]</span>
-      </div>
-    </div>
-
-    <div class="sign-off">
-      <div class="brand"><span class="brand-mark"></span><span>MICROSCLERA</span></div>
-      <div class="contact">
-        <a href="mailto:[REEMPLAZAR:nico@microsclera.com]">Inversores</a>
-        <a href="mailto:[REEMPLAZAR:contacto@microsclera.com]">Socios estratégicos</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="legal">
-  <div class="container">© MICROSCLERA · Documento de pitch · 2026</div>
 </footer>
 
 <script>
@@ -1054,7 +878,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => io.observe(el));
 </script>
 </body>
